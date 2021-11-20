@@ -1,0 +1,35 @@
+After clicking Start, you will be given the initial state of the light in the room and the total numbers of prisoners in the prison.
+
+--------------
+
+The solution:
+The input field should be a number that says how many times "the counter", who is also one of the prisoners has, had to turn the light off in the room after seeing the lights on
+upon entering. This is the logic behind how this was coded.
+
+Imagine that the prisoners have chosen a counter, who is simply one of the prisoners with the task to turn the lights off everytime he enters the room, and counts how many times 
+he turned the lights off. With this logic, he will be able to conclude if all the prisoners have eventually been in the room. 
+
+If the lights were initially off, then he knows he is the first person in the room, and only has to turn off the lights the same amount as there are prisoners. So, if there were 20
+prisoners in total, he would have to turn the lights off 19 times. That would mean the other 19 prisoners have been in the room. And of course, the 20th prisoner is himself.
+
+This solution works if all the prisoners know that the initial state of the light is off. The only person who would know the initial state of the room is the counter.
+If he enters the room, and it is dark, he knows he is the first person in as nobody turned on the lights on before him.  However, since the rest of prisoners are not sure if the 
+light will be turned on or off before entering the room, they have to think of a more advanced solution. 
+
+Imagine the counter enters the room, and the lights are turned on. He would turn the lights off, but would not not be sure if the initial state of the room was like this, 
+or someone entered before him and turned the lights on. If he started counting like in the previous case, he would never be sure if after he counted the lights 19 times, it was 
+because all the 19 prisoners have been inside, or only 18. He can never be sure. So they devise a plan that everyone turns the lights on twice! This means, he would now have
+to count twice the amount of lights PLUS the initial state to be sure everyone was inside twice. So for example, if we have 20 prisoners, he would have to count 18 prisoners twice,
+a single person once, and add an extra count for the initial state. So the solution would be (19*2 - 1) + 1. The (19*2 - 1) means that 18 people have been inside twice, and the
+19th person has been inside once. Coupled with the fact that he is uncertain if the light was on initially he will simply add a +1 at the end. And with this final number he knows 
+that either EVERYONE has been inside twice, or everyone except one person who was inside only once. But in the end, everyone has been inside at least ONCE, which is what we are 
+looking for.
+
+tldr: Since prisoners don't know the initial state of the lights, everyone will have to turn the light on twice, thus extending the process significantly. The counter is the
+only person who knows the initial state of the light, which he concludes upon entering the room the first time. And with this information he will know if he needs to count:
+Lights on: (Number of prisoners * 2 -1) +1 so basically, Number of prisoners * 2.
+Lights off: Number of prisoners * 2 -1. 
+
+For 20 prisoners the solution would be:
+Lights on: 38
+Lights off: 37

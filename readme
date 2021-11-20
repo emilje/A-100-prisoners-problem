@@ -19,8 +19,8 @@ light will be turned on or off before entering the room, they have to think of a
 Imagine the counter enters the room, and the lights are turned on. He would turn the lights off, but would not not be sure if the initial state of the room was like this, 
 or someone entered before him and turned the lights on. If he started counting like in the previous case, he would never be sure if after he counted the lights 19 times, it was 
 because all the 19 prisoners have been inside, or only 18. He can never be sure. So they devise a plan that everyone turns the lights on twice! This means, he would now have
-to count twice the amount of lights PLUS the initial state to be sure everyone was inside twice. So for example, if we have 20 prisoners, he would have to count 18 prisoners twice,
-a single person once, and add an extra count for the initial state. So the solution would be (19*2 - 1) + 1. The (19*2 - 1) means that 18 people have been inside twice, and the
+to count twice the amount of lights PLUS the initial state to be sure everyone was inside twice. So for example, if we have 20 prisoners, he would have to acccount for 18 prisoners twice,
+the 19th prisoner once, and add an extra count for the initial state. So the solution would be (19*2 - 1) + 1. The (19*2 - 1) means that 18 people have been inside twice, and the
 19th person has been inside once. Coupled with the fact that he is uncertain if the light was on initially he will simply add a +1 at the end. And with this final number he knows 
 that either EVERYONE has been inside twice, or everyone except one person who was inside only once. But in the end, everyone has been inside at least ONCE, which is what we are 
 looking for.
